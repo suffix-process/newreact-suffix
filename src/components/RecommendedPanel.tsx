@@ -12,12 +12,12 @@ interface Recommendation {
 const recommendations: Recommendation[] = [
   {
     id: 1,
-    image: 'https://via.placeholder.com/300x180?text=Preventing+$26.6M',
+    image: 'https://media.istockphoto.com/id/980838288/photo/closeup-hands-of-freelancer-woman-working-using-digital-laptop-computer-and-drink-coffee.webp?a=1&b=1&s=612x612&w=0&k=20&c=9OENsqupMaC3xMTvWnv_4iapu7pixYncHam0mLTbPFQ=',
     title: 'Preventing $26.6M in erroneous spend for a global manufacturer',
   },
   {
     id: 2,
-    image: 'https://via.placeholder.com/300x180?text=Three+critical',
+    image: 'https://media.istockphoto.com/id/1213499152/photo/sample-online-news-website-on-tablet.webp?a=1&b=1&s=612x612&w=0&k=20&c=RcppdAZmtGGkInl6M1l-blg00PFht3G-VD4A1IgRUKE=',
     title: 'Three critical insights for life sciences R&D',
   },
 ];

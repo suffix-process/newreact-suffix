@@ -1,8 +1,9 @@
 
 // src/components/InsightsHub.tsx
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
+
 
 interface Post {
   id: number;
@@ -19,8 +20,8 @@ const samplePosts: Post[] = [
     id: 1,
     category: 'Corporate Social Responsibility',
     title: 'From progress to purpose: Celebrating Earth Day 2025',
-    image: 'https://via.placeholder.com/400x240?text=Earth+Day+2025',
-    link: '/posts/1',
+    image: 'https://images.unsplash.com/photo-1585867701670-d0209b593584?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2Nlc3NpbmclMjB0byUyMHBhcnBvcyUyMGJsb2d8ZW58MHx8MHx8fDA%3D',
+    link: '/posts/7',
     service: 'CSR',
     type: 'Blog',
   },
@@ -28,8 +29,8 @@ const samplePosts: Post[] = [
     id: 2,
     category: 'Automated Document Solutions',
     title: 'Paperless, painless ... and perfect?',
-    image: 'https://via.placeholder.com/400x240?text=Document+Solutions',
-    link: '/posts/2',
+    image: 'https://media.istockphoto.com/id/625737252/photo/when-the-impossible-became-possible.webp?a=1&b=1&s=612x612&w=0&k=20&c=I2OoKw6qnFWe8SM0SZAjGX2_jPzJxvK_V-94n___lB0=',
+    link: '/posts/8',
     service: 'Docs',
     type: 'Case Study',
   },
@@ -37,14 +38,14 @@ const samplePosts: Post[] = [
     id: 3,
     category: 'CX Transformation',
     title: 'What is Customer Experience (CX) Transformation?',
-    image: 'https://via.placeholder.com/400x240?text=CX+Transformation',
-    link: '/posts/3',
+    image: 'https://images.unsplash.com/photo-1586252997234-c97d95b88ee5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fFdoYXQlMjBpcyUyMEN1c3RvbWVyJTIwRXhwZXJpZW5jZSUyMChDWCklMjBUcmFuc2Zvcm1hdGlvbiUzRnxlbnwwfHwwfHx8MA%3D%3D',
+    link: '/posts/9',
     service: 'CX',
     type: 'Blog',
   },
 ];
 
-const serviceOptions = ['All', 'CSR', 'Docs', 'CX'];
+// const serviceOptions = ['All', 'CSR', 'Docs', 'CX'];
 const typeOptions = ['All', 'Blog', 'Case Study'];
 
 const InsightsHub: React.FC = () => {
@@ -61,19 +62,23 @@ const InsightsHub: React.FC = () => {
     });
   }, [serviceFilter, typeFilter, searchTerm]);
 
+  useEffect(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
+
   return (
     <section className="py-12">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-semibold mb-2">Conduent Insights Hub</h1>
+        <h1 className="text-3xl font-semibold mb-2">Suffix Insights Hub</h1>
         <p className="text-gray-600 mb-6">Blog Posts</p>
 
         {/* Filters & Search */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
           <div className="flex flex-wrap items-center gap-4">
-            <button onClick={() => setServiceFilter('All')} className={`${serviceFilter === 'All' ? 'text-black border-b-2 border-black' : 'text-gray-600'} pb-1`}>All</button>
-            {serviceOptions.slice(1).map((opt) => (
+            {/* <button onClick={() => setServiceFilter('All')} className={`${serviceFilter === 'All' ? 'text-black border-b-2 border-black' : 'text-gray-600'} pb-1`}>All</button> */}
+            {/* {serviceOptions.slice(1).map((opt) => (
               <button key={opt} onClick={() => setServiceFilter(opt)} className={`${serviceFilter === opt ? 'text-black border-b-2 border-black' : 'text-gray-600'} pb-1`}>{opt}</button>
-            ))}
+            ))} */}
             <div className="border-l h-4" />
             <button onClick={() => setTypeFilter('All')} className={`${typeFilter === 'All' ? 'text-black border-b-2 border-black' : 'text-gray-600'} pb-1`}>All</button>
             {typeOptions.slice(1).map((opt) => (

@@ -30,202 +30,167 @@ const PrivacyPolicy: React.FC = () => {
       </section>
 
       <br />
-      <p className="mb-4">
+      {/* <p className="mb-4">
         <strong>Effective Date:</strong> 24 April 2025<br />
         <strong>Last Updated:</strong> 24 April 2025
-      </p>
+      </p> */}
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">1. Objective</h2>
-        <p>
-          This Privacy Statement explains the privacy and data-protection principles followed by
-          <strong> Suffix Process Solutions Pvt. Ltd.</strong> (“we”, “us” or “our”) and its affiliates worldwide in relation to personal
-          information of our customers (including product- or service-clients and outsourcing clients), partners, contractors and vendors,
-          job applicants, trainees and current or former employees, prospective clients and Board members. It describes how we
-          collect, use, disclose and safeguard your personal data, whether you provide it directly to us or we collect it through
-          our websites, mobile applications, emails or other channels.
-        </p>
+        <div className="container mx-auto px-4 py-12">
+          {/* <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1> */}
+          <p className="text-gray-600 mb-2">
+            <strong>Effective Date:</strong> 1st April 2025
+          </p>
+          <p className="text-gray-600 mb-8">
+            <strong>Last Updated:</strong> 1st April 2025
+          </p>
+
+          <p className="mb-6">
+            At <strong>Suffix Process Solutions Pvt. Ltd.</strong> (“Suffix”, “we”, “our”, “us”), we value your trust and are committed to protecting your personal data in accordance with the Digital Personal Data Protection Act, 2023 (DPDPA) of India and the principles of ISO/IEC 27001:2022 for information security management.
+          </p>
+          <p className="mb-12">
+            This Privacy Policy outlines our practices relating to the collection, use, disclosure, storage, and protection of your personal data. It applies to all personal information collected via our website, forms, communication, and service delivery platforms.
+          </p>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">1. Data Protection Commitment</h2>
+            <p className="mb-4">
+              We process personal data lawfully, fairly, and for legitimate purposes, following the principles of:
+            </p>
+            <ul className="list-disc list-inside ml-4 mb-4">
+              <li>Purpose Limitation</li>
+              <li>Data Minimization</li>
+              <li>Storage Limitation</li>
+              <li>Accuracy</li>
+              <li>Accountability</li>
+              <li>Confidentiality, Integrity, and Availability</li>
+            </ul>
+            <p>
+              Our organization follows strict ISO 27001:2022 controls—access control, encryption, incident response, data retention—to ensure security of personal data throughout its lifecycle.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">2. Definitions (as per DPDPA)</h2>
+            <ul className="list-disc list-inside ml-4">
+              <li><strong>Data Principal:</strong> The individual to whom the personal data relates</li>
+              <li><strong>Data Fiduciary:</strong> Suffix Process Solutions Pvt. Ltd., determining the purpose and means of processing</li>
+              <li><strong>Personal Data:</strong> Any data about an individual who is identifiable by or in relation to such data</li>
+              <li><strong>Processing:</strong> Any operation on personal data—collection, storage, use, disclosure, or erasure</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">3. What Personal Data We Collect</h2>
+            <ul className="list-disc list-inside ml-4">
+              <li>Full name, contact details (email, mobile), job title, organization</li>
+              <li>Browsing information (IP address, browser details)</li>
+              <li>Identification documents for verification (where necessary)</li>
+              <li>Any other data you voluntarily share with us</li>
+            </ul>
+            <p className="mt-2">We do not intentionally collect or process any personal data of children (&lt;18 years of age).</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">4. Purpose of Processing</h2>
+            <ul className="list-disc list-inside ml-4">
+              <li>To respond to business inquiries and provide services</li>
+              <li>For client onboarding and due diligence</li>
+              <li>For identity verification and background validation</li>
+              <li>To send service updates, security alerts, or regulatory notifications</li>
+              <li>To improve user experience, system performance, and customer satisfaction</li>
+              <li>To comply with legal obligations (e.g., tax, audit, regulatory)</li>
+            </ul>
+            <p className="mt-2">All processing is based on consent, legitimate interest, or legal obligation, as applicable.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">5. Consent and Rights of the Data Principal</h2>
+            <p className="mb-4">
+              By interacting with our website or services, you consent to the collection and use of your personal data as outlined here.
+            </p>
+            <p className="mb-4">
+              As a Data Principal, you have the right to:
+            </p>
+            <ul className="list-disc list-inside ml-4">
+              <li>Access your personal data</li>
+              <li>Request correction or erasure</li>
+              <li>Withdraw consent at any time</li>
+              <li>File a grievance related to misuse or breach of your personal data</li>
+            </ul>
+            <p>You may write to us at <a href="mailto:privacy@suffixcorp.com" className="text-blue-600 hover:underline">privacy@suffixcorp.com</a> to exercise these rights. We will respond within DPDPA timelines.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">6. Data Retention</h2>
+            <p>
+              We retain personal data only as long as necessary to fulfill its purpose or as required by law. Once no longer needed, data is securely deleted or anonymized per ISO 27001:2022 control A.8.3.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">7. Data Security Measures</h2>
+            <ul className="list-disc list-inside ml-4">
+              <li>Encryption (at rest and in transit)</li>
+              <li>Role-based access control</li>
+              <li>Security incident management (ISO 27035)</li>
+              <li>Endpoint protection and firewall controls</li>
+              <li>Regular vulnerability assessments and patching</li>
+            </ul>
+            <p className="mt-2">All employees and contractors are bound by NDAs and receive periodic security training.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">8. Data Sharing and Transfer</h2>
+            <ul className="list-disc list-inside ml-4">
+              <li>Authorized service providers under data processing agreements</li>
+              <li>Government, regulatory, or law enforcement bodies when legally required</li>
+              <li>Affiliates or partners fulfilling contractual obligations</li>
+            </ul>
+            <p className="mt-2">We do not sell your data. Cross-border transfers are safeguarded per applicable laws.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">9. Use of Cookies and Tracking</h2>
+            <p>
+              We use cookies to enhance usability, analyze interactions, deliver relevant content, and measure engagement. You can manage cookie preferences via your browser settings.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">10. Grievance Redressal Mechanism</h2>
+            <p>
+              We have appointed a Grievance Officer as per Section 13 of DPDPA:
+            </p>
+            <ul className="list-disc list-inside ml-4">
+              <li><strong>Name:</strong> Bhaumik Mehta</li>
+              <li><strong>Email:</strong> <a href="mailto:privacy@suffixcorp.com" className="text-blue-600 hover:underline">privacy@suffixcorp.com</a></li>
+              <li><strong>Contact:</strong> 9376884752</li>
+              <li><strong>Address:</strong> Zade, Z2, Opp Baghban Party Plot, Hebatpur Road, Ahmedabad - 380059</li>
+            </ul>
+            <p className="mt-2">Grievances will be acknowledged within 24 hours and resolved within 7 working days.</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">11. Policy Review and Updates</h2>
+            <p>
+              This Privacy Policy is reviewed periodically to reflect changes in law, business practices, or technology. Please review this page regularly; updates will carry a new “Last Updated” date.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-2">12. Contact Us</h2>
+            <address className="not-italic">
+              Suffix Process Solutions Pvt. Ltd.<br />
+              📧 <a href="mailto:privacy@suffixcorp.com" className="text-blue-600 hover:underline">privacy@suffixcorp.com</a><br />
+              🌐 <a href="https://www.suffixcorp.com" className="text-blue-600 hover:underline">www.suffixcorp.com</a><br />
+              📍 Zade, Z2, Opp Baghban Party Plot, Hebatpur Road, Ahmedabad - 380059
+            </address>
+          </section>
+        </div>
       </section>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">2. Scope</h2>
-        <p>This Statement applies to personal information collected or processed by Suffix Process Solutions through:</p>
-        <ul className="list-disc list-inside">
-          <li>Our corporate websites and microsites (collectively, “Suffix Websites”)</li>
-          <li>Emails, calls or other direct communications with you</li>
-          <li>Our mobile applications</li>
-          <li>Third-party integrations (e.g. social media widgets)</li>
-        </ul>
-        <p>
-          It does not cover third-party websites or services to which we link. We encourage you to review the privacy policies
-          of any site you visit from ours.
-        </p>
-      </section>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">3. What Personal Information We Collect</h2>
-        <table className="w-full text-left mb-4 border-collapse">
-          <thead>
-            <tr>
-              <th className="border p-2">Collection Method</th>
-              <th className="border p-2">Data Elements</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border p-2">You provide directly</td>
-              <td className="border p-2">
-                Name, email address, job title, organization, business address (city, country), phone number,
-                industry type, resume/CV (if applying), other fields you complete.
-              </td>
-            </tr>
-            <tr>
-              <td className="border p-2">Automatically when you use our sites/apps</td>
-              <td className="border p-2">
-                IP address, device type, browser type, cookies and other tracking identifiers, pages visited,
-                time stamps, geolocation (at city level).
-              </td>
-            </tr>
-            <tr>
-              <td className="border p-2">From third-party sources</td>
-              <td className="border p-2">
-                Social-media profile data (as permitted by your privacy settings), publicly available business directories,
-                marketing lists (where you have opted in).
-              </td>
-            </tr>
-            <tr>
-              <td className="border p-2">Mobile usage</td>
-              <td className="border p-2">
-                Advertising ID (IDFA, AAID), device identifiers, operating system, app usage metrics, push-notification preferences.
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">4. How We Use Your Personal Information</h2>
-        <table className="w-full text-left mb-4 border-collapse">
-          <thead>
-            <tr>
-              <th className="border p-2">Purpose</th>
-              <th className="border p-2">Legal Basis</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border p-2">To respond to your inquiries and provide requested services</td>
-              <td className="border p-2">Performance of contract or legitimate interest</td>
-            </tr>
-            <tr>
-              <td className="border p-2">To send newsletters, marketing materials and event invitations</td>
-              <td className="border p-2">Consent or legitimate interest</td>
-            </tr>
-            <tr>
-              <td className="border p-2">To administer our websites, apps, troubleshoot, and secure systems</td>
-              <td className="border p-2">Legitimate interest</td>
-            </tr>
-            <tr>
-              <td className="border p-2">To run analytics and improve functionality and user experience</td>
-              <td className="border p-2">Legitimate interest</td>
-            </tr>
-            <tr>
-              <td className="border p-2">To comply with legal obligations (e.g. tax, audit, regulatory)</td>
-              <td className="border p-2">Legal obligation</td>
-            </tr>
-            <tr>
-              <td className="border p-2">To process job applications</td>
-              <td className="border p-2">Consent or performance of recruitment process</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">5. Cookies & Tracking Technologies</h2>
-        <ul className="list-disc list-inside mb-4">
-          <li><strong>Strictly Necessary Cookies:</strong> Enable core functionality (e.g. session management).</li>
-          <li><strong>Performance Cookies:</strong> Aggregate analytics to measure site performance.</li>
-          <li><strong>Functionality Cookies:</strong> Personalize your experience (e.g. language).</li>
-          <li><strong>Targeting/Advertising Cookies:</strong> Deliver relevant third-party ads.</li>
-        </ul>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">6. Sharing & Disclosure</h2>
-        <p>We do <strong>not</strong> sell your personal data. We may share it with:</p>
-        <ul className="list-disc list-inside">
-          <li><strong>Affiliates & Subsidiaries:</strong> For legitimate business purposes.</li>
-          <li><strong>Service Providers:</strong> Under confidentiality obligations, to help us deliver services.</li>
-          <li><strong>Professional Advisors:</strong> Auditors, lawyers or insurers to meet legal requirements.</li>
-          <li><strong>Statutory Authorities:</strong> When required by law (e.g. court orders).</li>
-          <li><strong>Successors in Interest:</strong> If we merge or are acquired, under equivalent safeguards.</li>
-        </ul>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">7. International Data Transfers</h2>
-        <p>
-          Your data may be transferred outside India—including to countries with different data-protection laws—to our affiliates
-          or service providers. We ensure transfers comply with applicable legal requirements (e.g. standard contractual clauses).
-        </p>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">8. Data Retention</h2>
-        <p>
-          We retain personal information only as long as necessary to fulfill the purposes outlined above, including:
-        </p>
-        <ul className="list-disc list-inside">
-          <li>The duration of our business relationship or contractual obligations</li>
-          <li>Compliance with legal, tax or accounting requirements</li>
-          <li>Resolution of disputes and enforcement of our agreements</li>
-        </ul>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">9. Your Rights</h2>
-        <p>Subject to local law, you may have the right to:</p>
-        <ul className="list-disc list-inside">
-          <li>Access the personal data we hold about you</li>
-          <li>Rectify inaccuracies</li>
-          <li>Delete or restrict processing</li>
-          <li>Object to processing for direct marketing or profiling</li>
-          <li>Port your data in a machine-readable format</li>
-          <li>Withdraw consent at any time (for consent-based processing)</li>
-        </ul>
-        <p>To exercise these rights, please contact our Data Privacy Office (see Section 11).</p>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">10. How to Manage Your Preferences</h2>
-        <ul className="list-disc list-inside">
-          <li><strong>Newsletters & Marketing Emails:</strong> Click “Unsubscribe” in any marketing email.</li>
-          <li><strong>Mobile Notifications:</strong> Manage via your device’s settings or by contacting us.</li>
-          <li><strong>Browser Cookies:</strong> Adjust settings in your browser (Chrome, Firefox, Edge, Safari).</li>
-        </ul>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">11. Contact & Grievance Redressal</h2>
-        <p>If you have questions or wish to exercise any privacy right, contact:</p>
-        <address className="not-italic">
-          <strong>Data Privacy Office</strong><br />
-          Suffix Process Solutions Pvt. Ltd.<br />
-          Email: <a href="mailto:data.privacy@suffixcorp.com" className="text-cyan-500 hover:underline">data.privacy@suffixcorp.com</a><br />
-          Phone: +91 99250 00237
-        </address>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">12. Anti-Spam Policy</h2>
-        <p>We use industry best practices to prevent unsolicited bulk email. All inbound emails are screened; suspected spam is rejected or quarantined.</p>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">13. Security Measures</h2>
-        <p>We implement physical, technical and administrative safeguards—ISO 27001:2022 certified—to protect your personal data against unauthorized access, loss or alteration.</p>
-      </section>
     </div>
   );
 };

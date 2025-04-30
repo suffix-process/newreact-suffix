@@ -35,22 +35,23 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Business Process</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Customer Experience</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Human Capital</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Transaction Processing</a></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">Business Process</a></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">Customer Experience</a></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">Healthcare</a></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">Human Capital</a></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">Transaction Processing</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4">About</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Company</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Leadership</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Investors</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">Company</a></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">Leadership</a></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">Investors</a></li>
+              <li><Link to="/careers" className="text-gray-400 hover:text-white transition-colors">Careers</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
+
             </ul>
           </div>
 
@@ -58,10 +59,10 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
               <li><Link to="/blogpost" className="text-gray-400 hover:text-white transition-colors">Bolg</Link></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">News</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Events</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Insights</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">News</a></li>
+              <li><Link to="/picture-page" className="text-gray-400 hover:text-white transition-colors">Events</Link></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">Insights</a></li>
+              <li><a href="#" className="text-red-400 hover:text-white transition-colors">Case Studies</a></li>
             </ul>
           </div>
 
@@ -84,8 +85,8 @@ const Footer: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-gray-400">
             <Link to="/terms-of-use" className="hover:text-white transition-colors">Terms of Use</Link>
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Accessibility</a>
+            <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
+            <Link to="/privacy-choices" className="hover:text-white transition-colors">Privacy Choices</Link>
           </div>
         </div>
       </div>
