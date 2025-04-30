@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 // import Logo from './Logo';
-import logo from '../assets/Suffixlogo-Pho.png';
-// import logoWebp from '../assets/Suffix_Logo_New.webp';
+// import logo from '../assets/Suffixlogo-Pho.png';
+import logo from '../assets/Suffix_Logo_New_1-removebg.png';
+import { Link } from 'react-router-dom';
+
 
 const navItems = [
   {
@@ -50,12 +52,18 @@ const MainNav: React.FC = () => {
 
 
         {/* Logo */}
-        <img
-          src={logo}
-          alt="Suffix Logo"
-          className="h-[100px] w-auto object-contain filter"
-          style={{ filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(6678%) hue-rotate(87deg) brightness(109%) contrast(76%)' }}
-        />
+        {/* Hi-tech Hybrid Human */}
+        <Link to="/">
+    <img
+      src={logo}
+      alt="Suffix Logo"
+      className="h-[90px] w-auto object-contain filter"
+      style={{
+        filter:
+          'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(6678%) hue-rotate(87deg) brightness(109%) contrast(76%)',
+      }}
+    />
+  </Link>
         {/* logo */}
 
         {/* Desktop nav */}

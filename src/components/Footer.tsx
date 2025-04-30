@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import { Facebook, Twitter, Linkedin, Youtube, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Footer: React.FC = () => {
           <div>
             <Logo />
             <p className="mt-4 text-gray-400">
-              Conduent delivers mission-critical services and solutions on behalf of businesses and governments.
+              Suffix delivers mission-critical services and solutions on behalf of businesses and governments.
             </p>
             <div className="flex space-x-4 mt-6">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -30,7 +31,7 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2">
@@ -41,7 +42,7 @@ const Footer: React.FC = () => {
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Transaction Processing</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">About</h3>
             <ul className="space-y-2">
@@ -52,11 +53,11 @@ const Footer: React.FC = () => {
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+              <li><Link to="/blogpost" className="text-gray-400 hover:text-white transition-colors">Bolg</Link></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">News</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Events</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Insights</a></li>
@@ -76,26 +77,15 @@ const Footer: React.FC = () => {
           </div> */}
 
         </div>
-        <div className="mt-4 pt-8 border-gray-800 flex flex-col md:flex-row justify-end items-center">
-          {/* <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Conduent, Inc. All rights reserved.
-          </div> */}
-          <div className="flex flex-wrap justify-center space-x-4 text-sm text-gray-400">
-            <a href="#" className="hover:text-white transition-colors mb-2 md:mb-0">Blog</a>
-            <a href="#" className="hover:text-white transition-colors mb-2 md:mb-0">Careers</a>
-            <a href="#" className="hover:text-white transition-colors mb-2 md:mb-0">Events</a>
-            {/* <a href="#" className="hover:text-white transition-colors mb-2 md:mb-0">Accessibility</a> */}
-          </div>
-        </div>
         <div className="mt-4 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Conduent, Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} Suffix, Inc. All rights reserved.
           </div>
-          <div className="flex flex-wrap justify-center space-x-4 text-sm text-gray-400">
-            <a href="#" className="hover:text-white transition-colors mb-2 md:mb-0">Terms of Use</a>
-            <a href="#" className="hover:text-white transition-colors mb-2 md:mb-0">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors mb-2 md:mb-0">Cookie Policy</a>
-            <a href="#" className="hover:text-white transition-colors mb-2 md:mb-0">Accessibility</a>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-gray-400">
+            <Link to="/terms-of-use" className="hover:text-white transition-colors">Terms of Use</Link>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Accessibility</a>
           </div>
         </div>
       </div>
