@@ -70,7 +70,7 @@ const NewsInsightsGrid: React.FC = () => (
                 {insight.title}
               </h3>
               <span className="text-teal-600 font-medium inline-flex items-center">
-                Learn more <ChevronRight className="ml-1" size={14} />
+                Read more <ChevronRight className="ml-1" size={14} />
               </span>
             </div>
           </Link>

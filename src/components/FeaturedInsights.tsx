@@ -40,7 +40,7 @@ const FeaturedInsights: React.FC = () => {
           {/* Large hero card */}
           <Link
             // to={featured[0].href}
-            to={`/posts/${featured[0].id}`}  
+            to={`/posts/${featured[0].id}`}
             className="relative group block lg:col-span-2 h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
           >
             <img
@@ -55,26 +55,35 @@ const FeaturedInsights: React.FC = () => {
           </Link>
 
           {/* Two smaller cards */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4 sm:gap-8 sm:col-span-1 my-4">
             {featured.slice(1).map((insight) => (
               <Link
                 key={insight.id}
-                // to={insight.href}
                 to={`/posts/${insight.id}`}
-                className="flex items-center space-x-4 h-32 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow"
+                className="flex flex-col items-start rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow sm:flex-row sm:items-center sm:h-32"
               >
-                <img
-                  src={insight.image}
-                  alt={insight.title}
-                  className="w-32 h-full object-cover flex-shrink-0"
-                />
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-800">{insight.title}</h4>
-                  <span className="text-teal-600 font-medium">Read the blog →</span>
+                {/* image: full width on mobile, fixed 32 on sm+ */}
+                <div className="w-full sm:w-32 aspect-[4/3] sm:aspect-auto sm:h-full">
+                  <img
+                    src={insight.image}
+                    alt={insight.title}
+                    className="w-full h-full object-cover sm:w-32"
+                  />
+                </div>
+
+                {/* text */}
+                <div className="flex-1 p-4 sm:p-0 sm:px-4">
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-800 leading-snug">
+                    {insight.title}
+                  </h4>
+                  <span className="text-teal-600 font-medium text-xs sm:text-sm mt-1 block">
+                    Read the blog →
+                  </span>
                 </div>
               </Link>
             ))}
           </div>
+
         </div>
 
         {/* CTA Banner */}

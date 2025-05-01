@@ -107,7 +107,7 @@ const InsightsHub: React.FC = () => {
                 <div className="p-4">
                   <p className="text-sm text-gray-500">{post.category}</p>
                   <h3 className="mt-1 text-lg font-medium text-gray-800">{post.title}</h3>
-                  <p className="text-teal-600 mt-2 inline-block">Learn more →</p>
+                  <p className="text-teal-600 mt-2 inline-block">Read more →</p>
                 </div>
               </div>
             </Link>

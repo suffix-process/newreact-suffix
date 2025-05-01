@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
 import { useEffect } from "react";
-import sdfImage from '../assets/image.png';
+// import sdfImage from '../assets/image.png';
 
 // const navLinks = [
 //   { title: "Home", href: "#" },
@@ -113,11 +113,13 @@ function App() {
       {/* Hero Section */}
       <section
         className="relative min-h-[330px]  flex flex-col justify-center items-center text-center bg-gradient-to-r from-[#89516d] to-[#304168] text-white"
-      style={{
-    backgroundImage: `url(${sdfImage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }}
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHRlY2hub2xvZ3l8ZW58MHx8MHx8fDA%3D')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          width: '100%',
+          height: '400px'  // whatever height you need
+        }}
       >
         <div className="mt-12 mb-6 text-4xl sm:text-5xl font-bold drop-shadow">Together we're making a difference</div>
         <div className="flex w-full max-w-lg mx-auto bg-white rounded shadow p-2 gap-2 items-center">

@@ -82,7 +82,7 @@ const ServicesPage: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-bold my-6 text-[#006B81]">
               Purpose-Built Solutions for the BFSI Sector
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed text-[#006B81] mx-[-90px]">
+            <p className="text-lg md:text-xl leading-relaxed text-[#006B81] ">
               Empower, streamline, and scale — Whether you’re processing insurance claims,
               onboarding new customers, handling KYC verifications, or managing compliance workflows,
               our Human + RPA + Automation-powered solutions turn complexity into clarity.
@@ -158,7 +158,7 @@ const ServicesPage: React.FC = () => {
             <h1 className="text-4xl md:text-5xl mb-6 text-[#006B81]">
             Move your organization ahead
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed text-[#006B81] mx-[-90px]">
+            <p className="text-lg md:text-xl leading-relaxed text-[#006B81] ">
             Every day Conduent helps improve processes, interactions and outcomes for our 
             clients and the millions of people who count on them. It’s why we’re trusted 
             by some of the world’s largest brands and government agencies and consistently 

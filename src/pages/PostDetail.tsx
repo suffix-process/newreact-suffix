@@ -182,7 +182,7 @@ const samplePosts: PostData[] = [
     **Looking Ahead**  
     Building on this progress, we are piloting advanced waste-management technologies across our campuses and integrating sustainability metrics into our client solutions. By moving from progress to purpose, Earth Day 2025 marks a significant milestone in our journey toward a greener future.
         `.trim(),
-        image: 'https://via.placeholder.com/800x400?text=Earth+Day+2025',
+        image: 'https://images.unsplash.com/photo-1585867701670-d0209b593584?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2Nlc3NpbmclMjB0byUyMHBhcnBvcyUyMGJsb2d8ZW58MHx8MHx8fDA%3D',
         date: 'April 22, 2025',
       },
       {
