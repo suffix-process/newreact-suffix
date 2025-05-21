@@ -1,0 +1,340 @@
+import logo1 from '../assets/logos/bajaj.png';
+import logo2 from '../assets/logos/icici.png';
+import logo3 from '../assets/logos/indus.png';
+import logo4 from '../assets/logos/Reliance.png';
+import logo5 from '../assets/logos/shriram.png';
+import logo6 from '../assets/logos/TATA_AIG.png';
+
+
+
+
+
+import React, { useState } from 'react';
+import { Button } from './Button'; // Assuming you have a Button component
+
+export const JobRecommendationBanner: React.FC = () => {
+  const [selectedPath, setSelectedPath] = useState<'resume' | 'questions' | null>(null);
+
+  const handleGetStarted = () => {
+    if (!selectedPath) {
+      alert('Please select an option first');
+      return;
+    }
+
+    if (selectedPath === 'resume') {
+      // Handle resume upload logic
+      console.log('Proceeding with resume upload');
+    } else {
+      // Handle questions flow
+      console.log('Proceeding with questions');
+    }
+  };
+
+  return (
+    <div className="max-w-2xl mx-auto p-6">
+      <h2 className="text-2xl font-bold text-center mb-6">Choose your path!</h2>
+      <p className="text-center mb-8">Either use your resume or tell us a little about yourself.</p>
+      
+      <div className="flex justify-center gap-4 mb-8">
+        <button
+          className={`px-6 py-3 rounded-lg font-medium border-2 ${
+            selectedPath === 'resume'
+              ? 'bg-blue-500 text-white border-blue-500'
+              : 'bg-white text-gray-700 border-gray-300'
+          }`}
+          onClick={() => setSelectedPath('resume')}
+        >
+          Use My Resume
+        </button>
+        <span className="flex items-center text-gray-400">or</span>
+        <button
+          className={`px-6 py-3 rounded-lg font-medium border-2 ${
+            selectedPath === 'questions'
+              ? 'bg-blue-500 text-white border-blue-500'
+              : 'bg-white text-gray-700 border-gray-300'
+          }`}
+          onClick={() => setSelectedPath('questions')}
+        >
+          Answer questions
+        </button>
+      </div>
+
+      <div className="bg-[#06b49d] text-white py-6 flex items-center justify-between px-4 max-w-5xl mx-auto rounded mt-1 mb-10">
+        <div className="text-lg font-medium">Get tailored job recommendations based on your interests.</div>
+        <Button 
+          className="bg-white text-[#06b49d] font-semibold px-6 py-2 hover:bg-gray-100 transition-colors"
+          onClick={handleGetStarted}
+        >
+          Get started
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+
+
+/////////////////////////////////////////////////
+// src/components/JobRecommendationBanner.tsx
+import React, { useState, useRef } from 'react'
+import { X } from 'lucide-react'
+
+export interface Category {
+  name: string
+  slug: string
+}
+
+// If you already have a shared categories list, import it instead
+const categories: Category[] = [
+  { name: 'Information Technology',           slug: 'information-technology' },
+  { name: 'Client Support & Administration', slug: 'client-support-administration' },
+  { name: 'Accounting & Finance',            slug: 'accounting-finance' },
+  { name: 'Human Resources',                 slug: 'human-resources' },
+  { name: 'Program & Project Management',    slug: 'program-project-management' },
+  { name: 'Sales',                           slug: 'sales' },
+  { name: 'Internal Services & Security',    slug: 'internal-services-security' },
+  { name: 'Marketing & Communications',      slug: 'marketing-communications' },
+]
+
+const totalSteps = 5
+
+export const JobRecommendationBanner: React.FC = () => {
+  const [selectedPath, setSelectedPath] = useState<'resume' | 'questions' | null>(null)
+  const [submitting, setSubmitting] = useState(false)
+  const [step, setStep] = useState(1)
+  const [selections, setSelections] = useState<Category[]>([])
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
+  // ====== Resume upload handlers ======
+  const handleResumeClick = () => {
+    setSelectedPath('resume')
+    fileInputRef.current?.click()
+  }
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) console.log('PDF selected:', file)
+  }
+
+  // ====== Wizard handlers ======
+  const handleSelect = (cat: Category) => {
+    setSelections((prev) =>
+      prev.find((c) => c.slug === cat.slug)
+        ? prev.filter((c) => c.slug !== cat.slug)
+        : [...prev, cat]
+    )
+  }
+  const handleNext = () => {
+    if (step < totalSteps) {
+      setStep(step + 1)
+      setSelections([])
+    } else {
+      console.log('Wizard complete. Answers:', selections)
+      // proceed to results or API call...
+    }
+  }
+  const handleBack = () => {
+    if (step > 1) {
+      setStep(step - 1)
+      setSelections([])
+    } else {
+      setSelectedPath(null)  // back to resume/questions screen
+    }
+  }
+
+  // ====== Render ======
+  if (selectedPath === 'questions') {
+    return (
+      <div className="relative max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <X
+          onClick={handleBack}
+          className="absolute top-4 right-4 h-6 w-6 text-gray-500 hover:text-gray-800 cursor-pointer"
+        />
+        <div className="flex justify-between mb-6">
+          <button onClick={handleBack} className="text-gray-500 hover:text-gray-800">
+            ← Back
+          </button>
+          <span>Step {step} of {totalSteps}</span>
+        </div>
+        <h2 className="text-3xl font-semibold text-center text-[#06b49d] mb-8">
+          What are you interested in?
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-h-64 overflow-y-auto">
+          {categories.map((cat) => {
+            const active = selections.some((c) => c.slug === cat.slug)
+            return (
+              <button
+                key={cat.slug}
+                type="button"
+                onClick={() => handleSelect(cat)}
+                className={`
+                  px-4 py-2 rounded-lg border transition
+                  ${active
+                    ? 'bg-[#06b49d] text-white border-[#06b49d]'
+                    : 'bg-white text-gray-800 border-gray-300 hover:border-[#06b49d]'}
+                `}
+              >
+                {cat.name}
+              </button>
+            )
+          })}
+        </div>
+        <div className="text-center">
+          <button
+            onClick={handleNext}
+            disabled={selections.length === 0}
+            className={`
+              px-6 py-3 rounded-lg text-white font-medium transition
+              ${selections.length
+                ? 'bg-[#06b49d] hover:bg-teal-600'
+                : 'bg-gray-300 cursor-not-allowed'}
+            `}
+          >
+            {step < totalSteps ? 'Next' : 'Finish'}
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  // Default: resume/questions selection
+  return (
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold text-center mb-4">Choose your path!</h2>
+      <p className="text-center mb-6">
+        Either use your resume or tell us a little about yourself.
+      </p>
+
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="application/pdf"
+          onChange={handleFileChange}
+          className="hidden"
+        />
+        <button
+          type="button"
+          className={`px-6 py-3 rounded-lg font-medium border-2 transition-colors ${
+            selectedPath === 'resume'
+              ? 'bg-blue-500 text-white border-blue-500'
+              : 'bg-white text-gray-700 border-gray-300'
+          }`}
+          onClick={handleResumeClick}
+        >
+          Use My Resume
+        </button>
+        <span className="text-gray-400">or</span>
+        <button
+          type="button"
+          className={`px-6 py-3 rounded-lg font-medium border-2 transition-colors ${
+            selectedPath === 'questions'
+              ? 'bg-blue-500 text-white border-blue-500'
+              : 'bg-white text-gray-700 border-gray-300'
+          }`}
+          onClick={() => {
+            setSelectedPath('questions')
+            setStep(1)
+            setSelections([])
+          }}
+        >
+          Answer Questions
+        </button>
+      </div>
+    </div>
+  )
+}
+
+export default JobRecommendationBanner
+
+
+\\\
+  <div className="max-w-5xl mx-auto">
+      {!showBanner && (
+        <div className="bg-[#06b49d] text-white py-6 px-4 rounded mt-1 mb-10 flex items-center justify-between">
+          <div className="text-lg font-medium">
+            Get tailored job recommendations based on your interests.
+          </div>
+          <button
+            onClick={() => setShowBanner(true)}
+            className="bg-white text-[#06b49d] font-semibold px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+          >
+            Get started
+          </button>
+        </div>
+      )}
+
+      {showBanner && (
+        <JobRecommendationBanner 
+          onClose={() => setShowBanner(false)}
+        />
+      )}
+    </div>
+
+
+
+ https://unsplash.com/photos/a-conference-room-with-a-long-table-and-chairs-yH8jGAETtEY
+ https://unsplash.com/photos/black-chairs-and-table-in-white-room-wYoOgm5vpjI
+ https://unsplash.com/photos/a-group-of-people-sitting-around-a-table-with-laptops-2S7YTrRngAU
+
+
+
+ .//////
+ const article = {
+  id: 2,
+  category: 'Fraud Prevention',
+  title: 'Is your bank fast enough to catch fraud in real time?',
+  image:
+    'https://media.licdn.com/dms/image/v2/D4D12AQH0xX4jFTUV_g/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1733878060731?e=2147483647&v=beta&t=2fID8sQk5ylur-NMNTgVl4ZfQnY1DTzi3GR6slUzMF0',
+  date: 'July 10, 2025',
+  content: `
+    <div class="prose prose-indigo max-w-none text-gray-800">
+      <p>In today’s fast-moving digital economy, every second counts.</p>
+      <p>Fraudulent transactions can slip through in the blink of an eye—causing financial losses, regulatory penalties, and irreversible damage to customer trust. Unfortunately, many financial institutions are still relying on legacy fraud detection systems that act after the breach.</p>
+
+      <h2>🚨 The Threat Landscape Has Changed</h2>
+      <ul>
+        <li>Fraudsters now operate with AI tools of their own.</li>
+        <li>Synthetic identities, social engineering, and real-time phishing scams are on the rise.</li>
+        <li>Manual reviews and batch processing simply can't keep up.</li>
+      </ul>
+
+      <h2>🔍 Real-Time Fraud Detection: A New Standard</h2>
+      <p>Banks must shift from reactive to real-time defense. With AI-powered fraud detection, your systems can now:</p>
+      <ul>
+        <li>✅ Analyze behavioral patterns across millions of transactions</li>
+        <li>✅ Detect anomalies instantly—even subtle, first-time threats</li>
+        <li>✅ Auto-block suspicious transactions without disrupting genuine users</li>
+        <li>✅ Continuously learn and improve from each interaction</li>
+      </ul>
+
+      <p>Machine learning models are trained on evolving data, ensuring your fraud defense adapts faster than attackers can innovate.</p>
+
+      <h2>⚙️ Use Cases Across BFSI</h2>
+      <ul>
+        <li>Instant card fraud detection at ATMs and online payments</li>
+        <li>Real-time alerts for account takeover attempts</li>
+        <li>Biometric anomaly detection during customer logins</li>
+        <li>Risk-based transaction approvals for mobile banking apps</li>
+        <li>Cross-channel monitoring (web, mobile, POS, API)</li>
+      </ul>
+
+      <h2>💼 Business Benefits</h2>
+      <ul>
+        <li>Up to 85% reduction in financial loss from fraud</li>
+        <li>60% decrease in false positives, improving user experience</li>
+        <li>Compliance with regulatory standards like RBI, PCI-DSS, and GDPR</li>
+        <li>Stronger brand trust and customer retention</li>
+        <li>Lower operational overhead with automation-first response systems</li>
+      </ul>
+
+      <h2>🧠 It’s Time to Ask Yourself</h2>
+      <ul>
+        <li>Are your systems fast enough to stop fraud before it strikes?</li>
+        <li>Can you detect suspicious behavior in milliseconds, not hours?</li>
+        <li>Is your fraud response still dependent on manual interventions?</li>
+      </ul>
+
+      <p class="font-semibold">Modern fraud prevention isn't optional—it's mission-critical. Upgrade to real-time, AI-driven fraud defense and stay ahead of threats, not behind them.</p>
+    </div>
+  `.trim(),
+};
