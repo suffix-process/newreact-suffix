@@ -79,6 +79,9 @@ import FeaturedInsights from './components/FeaturedInsights';
 import NewsInsights from './components/NewsInsights';
 import CookieConsent from './components/CookieConsent';
 import CareerCategoryForm from './pages/CareerCategoryForm';
+import Iat from './pages/iat';
+import Rpa from './pages/rpa';
+import Procent from './pages/procent';
 
 const COOKIE_NAME = 'suffixcorp';
 
@@ -132,6 +135,10 @@ const App: React.FC = () => {
             <Route path="/careers" element={<CareerData />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/careerform" element={<CareerCategoryForm /> } />
+            <Route path="/solutions/iat" element={<Iat />} />
+            <Route path="/solutions/rpa" element={<Rpa />} />
+            <Route path="/solutions/procent" element={<Procent />} />
+            
           </Routes>
         </main>
 

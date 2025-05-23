@@ -19,11 +19,11 @@ const navItems: NavItem[] = [
   {
     name: 'SOLUTIONS',
     submenu: [
-      { label: 'Business Process Solutions', path: '/solutions/business-process-solutions' },
-      { label: 'Customer Experience Management', path: '/solutions/customer-experience-management' },
-      { label: 'Finance & Accounting', path: '/solutions/finance-accounting' },
-      { label: 'Healthcare Solutions', path: '/solutions/healthcare-solutions' },
-      { label: 'Human Capital Solutions', path: '/solutions/human-capital-solutions' },
+      { label: 'Intelligent Automation Tools', path: '/solutions/iat ' },
+      { label: 'RPA', path: '/solutions/rpa' },
+      { label: 'Process Centralization', path: '/solutions/procent' },
+      // { label: 'Healthcare Solutions', path: '/solutions/healthcare-solutions' },
+      // { label: 'Human Capital Solutions', path: '/solutions/human-capital-solutions' },
     ],
   },
   {
